@@ -26,22 +26,6 @@ def hello():
 def env_tester():
     return env_test.EnvTest().application()
 
-@app.route('/feed')
-def sr_feed_starter():
-    return sr_feed_app.SrFeedApp().application()    
-
-@app.route('/episode')
-def sr_episode():
-    return sr_redirect.SrRedirect().application()
-
-@app.route('/files')
-def rss_file_files():
-    return rss_files_app.RssFilesApp().application()
-
-@app.route('/filedownload/<path:filepath>')
-def rss_filedownload_files(filepath):
-    return rss_filedownload_app.RssFileDownloadApp(filepath, app_config.rss_files_paths).application()
-
 @app.route('/')
 def index_page():
     return index_app_page.IndexApp().application()
